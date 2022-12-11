@@ -141,6 +141,7 @@ CREATE TABLE ebay_records.ebay_bids (
 
 
 [Link to Enchanced Applications](https://github.com/Chase-Outman/tacochaser/tree/main/Enhanced)
+
 [Link to Original Applications](https://github.com/Chase-Outman/tacochaser/tree/main/Original)
 
 
