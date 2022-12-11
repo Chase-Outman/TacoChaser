@@ -23,6 +23,18 @@ For my ePortfolio I took two artifacts from my data structures and algorithms co
 ```
 ```
 
+```
+```
+
+### *Code Review*
+
+In this code review I will go over the original artifacts by explaining what each artifact does, next I will analysis the code to determine the code struct and the efficiencies of the code and last I will explain my enhancement plan for each artifact.
+
+[Link to video](https://youtu.be/V_Y9_Kr2jh8)
+
+```
+```
+
 ### *Software Engineering/Design*
 
 The artifact I chose to demonstrate my abilities with software engineering is an enhancement of two projects from CS-260(Data Structures and Algorithms), the first project was to finish a program that was written in C++, that would take data from a CSV file and store that data in a binary search tree. Once the data was loaded into the tree the user could perform search and remove functions to find and remove certain items from the tree. The second project is the same as the first, but instead of a binary search tree it uses a HashMap instead. 
@@ -52,5 +64,25 @@ The artifact I selected to show my abilities with databases is a program that ta
 I chose this artifact not only to put my skills of databases on display, but also to learn how to connect to a database through an application. To get the program to work with Java required using the external library JDBC, this library allows a Java program to connect to a database and to perform a variety of queries, like search for a specific item, adding a new item to the database, and removing an item from the database. I designed the program to be able to take data from a CSV file that contains data from eBay bids and add each row from the file into a table on the database, the program can also output all the data from the table as well as searching for a specific bid. 
 
 To reflect, the process on learning how to connect to a MySQL database was challenge at first, the first hurdler I had to overcome was to link the JDBC external library to allow my program to connect to the database. Some simple Google searches would give me plenty of resources on how to link the library, so this hurdle was easy to overcome. The next challenge was to figure out how to initialize the database at the start of the program, the best way I figured to solve this problem was to create a SQL script that would run at the start of the program that would create a new database and create a new table with the correct column names. To solve this problem, I had to research on how to execute a SQL script file and learn that another external library was needed, the ibatis library from Apache would allow me to run and execute my SQL file.
+
+SQL script file
+```
+DROP DATABASE IF EXISTS ebay_records;
+CREATE DATABASE ebay_records;
+USE ebay_records;
+
+CREATE TABLE ebay_records.ebay_bids (
+             bid_id INT NOT NULL,
+             title VARCHAR(100) NULL,
+             fund VARCHAR(45) NULL,
+             bid_amount VARCHAR(15) NULL,
+             PRIMARY KEY (bid_id));
+```
+
+```
+```
+
+[Link to Enchanced Applications](https://github.com/Chase-Outman/tacochaser/tree/main/Enhanced)
+[Link to Original Applications](https://github.com/Chase-Outman/tacochaser/tree/main/Original)
 
 
