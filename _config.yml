@@ -1,5 +1,5 @@
 
-theme: jekyll-theme-merlot
+remote_theme: pages-themes/tactile@v0.2.0
 url: chase-outman.github.io/tacochaser/
 title: Welcome to Chase Outman's homepage !
 description: Feel free to bookmark this page!
