@@ -69,8 +69,6 @@ To reflect, the process of changing the application from C++ to Java was a fun l
     }
 ```
 
-```
-```
 
 ### *Data Structures and Algorithms*
 
@@ -108,8 +106,6 @@ Search function that had the greater than and less than signs backwards
     }
 ```
 
-```
-```
 
 ### *Databases*
 
@@ -143,8 +139,6 @@ CREATE TABLE ebay_records.ebay_bids (
              PRIMARY KEY (bid_id));
 ```
 
-```
-```
 
 [Link to Enchanced Applications](https://github.com/Chase-Outman/tacochaser/tree/main/Enhanced)
 [Link to Original Applications](https://github.com/Chase-Outman/tacochaser/tree/main/Original)
