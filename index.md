@@ -69,6 +69,9 @@ To reflect, the process of changing the application from C++ to Java was a fun l
     }
 ```
 
+```
+```
+
 ### *Data Structures and Algorithms*
 
 The artifact I chose to show my knowledge of data structures and algorithms are the same two projects from CS-260(Data Structures and Algorithms) from the software engineering section (binary search tree and HashMap projects), but with further enhancements. 
@@ -77,7 +80,7 @@ I chose this artifact again because I found more opportunities for enhancements 
 
 To reflect the process of implementing an AVL tree was a great learning experience, while it is easy to find guides on how to create an AVL tree it is another story to create code and get the tree to work correctly. One challenge I faced was getting the delete and search function working correctly, but luckily the issue was simple in that I was comparing the search item backwards to the current root, was using ‘<’ where ‘>’ was needed and vice versa.
 
-Search Funtion that had the greater than and less than signs backwards
+Search function that had the greater than and less than signs backwards
 ```
     public void search(String searchBid) {
         //initialize current node
@@ -105,13 +108,26 @@ Search Funtion that had the greater than and less than signs backwards
     }
 ```
 
+```
+```
+
 ### *Databases*
 
 The artifact I selected to show my abilities with databases is a program that takes the concept of the previous artifacts from CS-260 by taking and reading data from a CSV file and inserting the data into a local MySQL database. 
 
 I chose this artifact not only to put my skills of databases on display, but also to learn how to connect to a database through an application. To get the program to work with Java required using the external library JDBC, this library allows a Java program to connect to a database and to perform a variety of queries, like search for a specific item, adding a new item to the database, and removing an item from the database. I designed the program to be able to take data from a CSV file that contains data from eBay bids and add each row from the file into a table on the database, the program can also output all the data from the table as well as searching for a specific bid. 
 
-To reflect, the process on learning how to connect to a MySQL database was challenge at first, the first hurdler I had to overcome was to link the JDBC external library to allow my program to connect to the database. Some simple Google searches would give me plenty of resources on how to link the library, so this hurdle was easy to overcome. The next challenge was to figure out how to initialize the database at the start of the program, the best way I figured to solve this problem was to create a SQL script that would run at the start of the program that would create a new database and create a new table with the correct column names. To solve this problem, I had to research on how to execute a SQL script file and learn that another external library was needed, the ibatis library from Apache would allow me to run and execute my SQL file.
+To reflect, the process on learning how to connect to a MySQL database was challenge at first, the first hurdler I had to overcome was to link the JDBC external library to allow my program to connect to the database. Some simple Google searches would give me plenty of resources on how to link the library, so this hurdle was easy to overcome. The next challenge was to figure out how to initialize the database at the start of the program, the best way I figured to solve this problem was to create a SQL script that would run at the start of the program that would create a new database and create a new table with the correct column names. To solve this problem, I had to research on how to execute a SQL script file and learn that another external library was needed, the ibatis library from Apache would allow me to run and execute my SQL file. Another challenge I had was creating code that would protect my database from an SQL injection, to solve this problem I researched that the best way to protect from a SQL injection attack is to use a prepared statement when executing queries that take input from the user.
+
+Code from remove function that creates a prepared statement before executing
+```
+    public static void removeBid(String bid_id) {
+            String sqlQuery = "DELETE FROM ebay_records.ebay_bids WHERE bid_id = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);
+            preparedStatement.setString(1, bid_id);
+            preparedStatement.executeUpdate();
+    }
+```
 
 SQL script file
 ```
@@ -125,6 +141,9 @@ CREATE TABLE ebay_records.ebay_bids (
              fund VARCHAR(45) NULL,
              bid_amount VARCHAR(15) NULL,
              PRIMARY KEY (bid_id));
+```
+
+```
 ```
 
 [Link to Enchanced Applications](https://github.com/Chase-Outman/tacochaser/tree/main/Enhanced)
