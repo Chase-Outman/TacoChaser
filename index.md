@@ -23,9 +23,6 @@ For my ePortfolio I took two artifacts from my data structures and algorithms co
 ```
 ```
 
-```
-```
-
 ### *Code Review*
 
 In this code review I will go over the original artifacts by explaining what each artifact does, next I will analysis the code to determine the code struct and the efficiencies of the code and last I will explain my enhancement plan for each artifact.
@@ -41,7 +38,24 @@ The artifact I chose to demonstrate my abilities with software engineering is an
 
 I chose these artifacts because I saw lots of opportunities to enhance the code that would display my competence with software engineering. The first enhancement I wanted to do was to rewrite the entire program in Java to showcase my abilities in using different languages, the next opportunity I saw was to make the code more readable and manageable since the original code was over 400 lines long, so my next enhancement was to break the program into sperate classes to make the code more maintainable. The last enhancement I made was to combine the two programs together to allow the user to compare the binary search tree method and HashMap method. 
 
-To reflect, the process of changing the application from C++ to Java was a fun learning experience, doing so has showed me how different languages deal with certain problems and how the two languages are also similar in certain areas. I think my biggest challenge was learning how to read data from a CSV file since the original project had a separate file that did that work for me, but after spending some time researching, I was able to solve the problem. 
+To reflect, the process of changing the application from C++ to Java was a fun learning experience, doing so has showed me how different languages deal with certain problems and how the two languages are also similar in certain areas. I think my biggest challenge was learning how to read data from a CSV file since the original project had a separate file that did that work for me, but after spending some time researching, I was able to solve the problem. During my code review I discovered that there were security issues like data validation at user entry points, to solve this problem I created a function that would check to make sure that the user entered the desired data type (an int in this case), code below for example.
+
+```
+    //function that displays a message to get data from the user and can display an error if undesired data is entered
+    private static int getUserInput(String message, String error) {
+        int userInput;
+        System.out.print(message);
+        //simple input validation that stops program from crashing if invalid input is put in
+        while (!scanner.hasNextInt()) {
+            String input = scanner.next();
+            System.out.println(input + " " + error);
+            System.out.print(message);
+        }
+        //gets the users input
+        userInput = scanner.nextInt();
+        return userInput;
+    }
+```
 
 ```
 ```
@@ -53,6 +67,34 @@ The artifact I chose to show my knowledge of data structures and algorithms are 
 I chose this artifact again because I found more opportunities for enhancements that would demonstrate my knowledge of data structures and algorithms. The additional enhancement I made to the artifact was to upgrade the standard binary search tree to an AVL binary search tree, which is a tree that checks the heights of each sub tree to determine if they are out of balanced every time a new object is added to the tree. If the tree is out of balance the algorithm will then rotate the nodes either clockwise or counterclockwise depending on if the tree is left or right heavy. Adding this enhancement would make the searching function of the tree more consistent since the tree would be always balanced, making the AVL tree search function operate at an average and worse case time complexity of O (log n), which is more efficient that a binary search tree worse case of O (n).
 
 To reflect the process of implementing an AVL tree was a great learning experience, while it is easy to find guides on how to create an AVL tree it is another story to create code and get the tree to work correctly. One challenge I faced was getting the delete and search function working correctly, but luckily the issue was simple in that I was comparing the search item backwards to the current root, was using ‘<’ where ‘>’ was needed and vice versa.
+
+Search Funtion that had the greater than and less than signs backwards
+```
+    public void search(String searchBid) {
+        //initialize current node
+        Node cur = root;
+
+        while (cur != null) {
+            //checks to see if the bid id value of the current node matches the searching bid id value
+            if (cur.value.getBidId().equals(searchBid)) {
+                //output that the bid was found and outputs the bid id, title, and bid amount of the searched item
+                System.out.println("Bid was found");
+                System.out.println(cur.value.getBidId() + " " + cur.value.getTitle() + " " + cur.value.getAmount());
+                return;
+            }
+            //if current node bid id value is greater than the searching bid id the traverse down the left child node
+            if (cur.value.getBidId().compareTo(searchBid) > 0) {
+                cur = cur.left;
+            }
+            //else traverse down the right child node
+            else {
+                cur = cur.right;
+            }
+        }
+        //if no matching bid id was found outputs that the bid was not found
+        System.out.println("Bid was not found!");
+    }
+```
 
 ```
 ```
