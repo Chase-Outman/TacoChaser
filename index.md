@@ -20,3 +20,37 @@ During my time here at SNHU I learned the importance of creating secure code and
   
 For my ePortfolio I took two artifacts from my data structures and algorithms course (CS-260) and enhance those artifacts to demonstrate by abilities in software engineering, data structures and algorithms, and databases. The first artifact is an application written in C++ that imports data from a CSV file into a binary search tree and the second artifact is similar except that is loads the data into a hash map instead. The following sections will go over in more depth on why I choose these certain artifacts and how enhancing these artifacts will showcase my abilities.
 
+```
+```
+
+### *Software Engineering/Design*
+
+The artifact I chose to demonstrate my abilities with software engineering is an enhancement of two projects from CS-260(Data Structures and Algorithms), the first project was to finish a program that was written in C++, that would take data from a CSV file and store that data in a binary search tree. Once the data was loaded into the tree the user could perform search and remove functions to find and remove certain items from the tree. The second project is the same as the first, but instead of a binary search tree it uses a HashMap instead. 
+
+I chose these artifacts because I saw lots of opportunities to enhance the code that would display my competence with software engineering. The first enhancement I wanted to do was to rewrite the entire program in Java to showcase my abilities in using different languages, the next opportunity I saw was to make the code more readable and manageable since the original code was over 400 lines long, so my next enhancement was to break the program into sperate classes to make the code more maintainable. The last enhancement I made was to combine the two programs together to allow the user to compare the binary search tree method and HashMap method. 
+
+To reflect, the process of changing the application from C++ to Java was a fun learning experience, doing so has showed me how different languages deal with certain problems and how the two languages are also similar in certain areas. I think my biggest challenge was learning how to read data from a CSV file since the original project had a separate file that did that work for me, but after spending some time researching, I was able to solve the problem. 
+
+```
+```
+
+### *Data Structures and Algorithms*
+
+The artifact I chose to show my knowledge of data structures and algorithms are the same two projects from CS-260(Data Structures and Algorithms) from the software engineering section (binary search tree and HashMap projects), but with further enhancements. 
+
+I chose this artifact again because I found more opportunities for enhancements that would demonstrate my knowledge of data structures and algorithms. The additional enhancement I made to the artifact was to upgrade the standard binary search tree to an AVL binary search tree, which is a tree that checks the heights of each sub tree to determine if they are out of balanced every time a new object is added to the tree. If the tree is out of balance the algorithm will then rotate the nodes either clockwise or counterclockwise depending on if the tree is left or right heavy. Adding this enhancement would make the searching function of the tree more consistent since the tree would be always balanced, making the AVL tree search function operate at an average and worse case time complexity of O (log n), which is more efficient that a binary search tree worse case of O (n).
+
+To reflect the process of implementing an AVL tree was a great learning experience, while it is easy to find guides on how to create an AVL tree it is another story to create code and get the tree to work correctly. One challenge I faced was getting the delete and search function working correctly, but luckily the issue was simple in that I was comparing the search item backwards to the current root, was using ‘<’ where ‘>’ was needed and vice versa.
+
+```
+```
+
+### *Databases*
+
+The artifact I selected to show my abilities with databases is a program that takes the concept of the previous artifacts from CS-260 by taking and reading data from a CSV file and inserting the data into a local MySQL database. 
+
+I chose this artifact not only to put my skills of databases on display, but also to learn how to connect to a database through an application. To get the program to work with Java required using the external library JDBC, this library allows a Java program to connect to a database and to perform a variety of queries, like search for a specific item, adding a new item to the database, and removing an item from the database. I designed the program to be able to take data from a CSV file that contains data from eBay bids and add each row from the file into a table on the database, the program can also output all the data from the table as well as searching for a specific bid. 
+
+To reflect, the process on learning how to connect to a MySQL database was challenge at first, the first hurdler I had to overcome was to link the JDBC external library to allow my program to connect to the database. Some simple Google searches would give me plenty of resources on how to link the library, so this hurdle was easy to overcome. The next challenge was to figure out how to initialize the database at the start of the program, the best way I figured to solve this problem was to create a SQL script that would run at the start of the program that would create a new database and create a new table with the correct column names. To solve this problem, I had to research on how to execute a SQL script file and learn that another external library was needed, the ibatis library from Apache would allow me to run and execute my SQL file.
+
+
