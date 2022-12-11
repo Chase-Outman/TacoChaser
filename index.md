@@ -53,20 +53,20 @@ I chose these artifacts because I saw lots of opportunities to enhance the code 
 To reflect, the process of changing the application from C++ to Java was a fun learning experience, doing so has showed me how different languages deal with certain problems and how the two languages are also similar in certain areas. I think my biggest challenge was learning how to read data from a CSV file since the original project had a separate file that did that work for me, but after spending some time researching, I was able to solve the problem. During my code review I discovered that there were security issues like data validation at user entry points, to solve this problem I created a function that would check to make sure that the user entered the desired data type (an int in this case), code below for example.
 
 ```
-    //function that displays a message to get data from the user and can display an error if undesired data is entered
-    private static int getUserInput(String message, String error) {
-        int userInput;
+//function that displays a message to get data from the user and can display an error if undesired data is entered
+private static int getUserInput(String message, String error) {
+    int userInput;
+    System.out.print(message);
+    //simple input validation that stops program from crashing if invalid input is put in
+    while (!scanner.hasNextInt()) {
+        String input = scanner.next();
+        System.out.println(input + " " + error);
         System.out.print(message);
-        //simple input validation that stops program from crashing if invalid input is put in
-        while (!scanner.hasNextInt()) {
-            String input = scanner.next();
-            System.out.println(input + " " + error);
-            System.out.print(message);
-        }
-        //gets the users input
-        userInput = scanner.nextInt();
-        return userInput;
     }
+    //gets the users input
+    userInput = scanner.nextInt();
+    return userInput;
+}
 ```
 
 
@@ -80,30 +80,30 @@ To reflect the process of implementing an AVL tree was a great learning experien
 
 Search function that had the greater than and less than signs backwards
 ```
-    public void search(String searchBid) {
-        //initialize current node
-        Node cur = root;
+public void search(String searchBid) {
+    //initialize current node
+    Node cur = root;
 
-        while (cur != null) {
-            //checks to see if the bid id value of the current node matches the searching bid id value
-            if (cur.value.getBidId().equals(searchBid)) {
-                //output that the bid was found and outputs the bid id, title, and bid amount of the searched item
-                System.out.println("Bid was found");
-                System.out.println(cur.value.getBidId() + " " + cur.value.getTitle() + " " + cur.value.getAmount());
-                return;
-            }
-            //if current node bid id value is greater than the searching bid id the traverse down the left child node
-            if (cur.value.getBidId().compareTo(searchBid) > 0) {
-                cur = cur.left;
-            }
-            //else traverse down the right child node
-            else {
-                cur = cur.right;
-            }
+    while (cur != null) {
+        //checks to see if the bid id value of the current node matches the searching bid id value
+        if (cur.value.getBidId().equals(searchBid)) {
+            //output that the bid was found and outputs the bid id, title, and bid amount of the searched item
+            System.out.println("Bid was found");
+            System.out.println(cur.value.getBidId() + " " + cur.value.getTitle() + " " + cur.value.getAmount());
+            return;
         }
-        //if no matching bid id was found outputs that the bid was not found
-        System.out.println("Bid was not found!");
+        //if current node bid id value is greater than the searching bid id the traverse down the left child node
+        if (cur.value.getBidId().compareTo(searchBid) > 0) {
+            cur = cur.left;
+        }
+        //else traverse down the right child node
+        else {
+            cur = cur.right;
+        }
     }
+    //if no matching bid id was found outputs that the bid was not found
+    System.out.println("Bid was not found!");
+}
 ```
 
 
@@ -117,12 +117,12 @@ To reflect, the process on learning how to connect to a MySQL database was chall
 
 Code from remove function that creates a prepared statement before executing
 ```
-    public static void removeBid(String bid_id) {
-            String sqlQuery = "DELETE FROM ebay_records.ebay_bids WHERE bid_id = ?";
-            PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);
-            preparedStatement.setString(1, bid_id);
-            preparedStatement.executeUpdate();
-    }
+public static void removeBid(String bid_id) {
+        String sqlQuery = "DELETE FROM ebay_records.ebay_bids WHERE bid_id = ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);
+        preparedStatement.setString(1, bid_id);
+        preparedStatement.executeUpdate();
+}
 ```
 
 SQL script file
