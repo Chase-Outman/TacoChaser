@@ -2,6 +2,18 @@
 ## Software Engineering ePortfolio
 ### *CS499 Computer Science Capstone*
 
+My name is Chase Outman, I am enrolled in the Computer Science program at Southern New Hampshire University. In this github I have took projects from past courses at SNHU with the purpose of enhancing them to showcase my skills and knowledge of software engineering, data structures and algorithms, and databases.
+
+```
+```
+
+### *Table of Contents*
+1. Professional Self-Assessment
+2. Code Review
+3. Software Engineering/Design
+4. Data Structures and Algorithms
+5. Database
+
 ```
 ```
 
@@ -57,9 +69,6 @@ To reflect, the process of changing the application from C++ to Java was a fun l
     }
 ```
 
-```
-```
-
 ### *Data Structures and Algorithms*
 
 The artifact I chose to show my knowledge of data structures and algorithms are the same two projects from CS-260(Data Structures and Algorithms) from the software engineering section (binary search tree and HashMap projects), but with further enhancements. 
@@ -96,9 +105,6 @@ Search Funtion that had the greater than and less than signs backwards
     }
 ```
 
-```
-```
-
 ### *Databases*
 
 The artifact I selected to show my abilities with databases is a program that takes the concept of the previous artifacts from CS-260 by taking and reading data from a CSV file and inserting the data into a local MySQL database. 
@@ -119,9 +125,6 @@ CREATE TABLE ebay_records.ebay_bids (
              fund VARCHAR(45) NULL,
              bid_amount VARCHAR(15) NULL,
              PRIMARY KEY (bid_id));
-```
-
-```
 ```
 
 [Link to Enchanced Applications](https://github.com/Chase-Outman/tacochaser/tree/main/Enhanced)
