@@ -1,4 +1,3 @@
-
-remote_theme: pages-themes/tactile@v0.2.0
+theme: minima
 url: chase-outman.github.io/tacochaser/
 title: Welcome to Chase Outman's homepage !
